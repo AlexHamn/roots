@@ -8,8 +8,9 @@ void setup(){
   //frameRate(.5);
 }
 void draw(){
-  time+=.05;
   if (x < width-100){
+      time+=.05;
+
   x+=4;
   float y = map(noise(time), 0, 1, height*.25, height*.75);
   ellipse(x,y, 50,50);
