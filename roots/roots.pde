@@ -2,9 +2,10 @@
   float x=0;
   float maxBallSize = map(noise(time), 0, 1, height*.3, height*.5);
   float ballSize = height*.5;
+  float finalSize = 0;
 
 void setup(){
-  size(1000,300);
+  size(1500,300);
   background(0);
   fill(255);
   //frameRate(15);
@@ -15,8 +16,9 @@ void draw(){
     x+=5;
     if(x<=height){
        ballSize = map(noise(time), 0, 1, height*.20, height*.6);
+       finalSize = x/ballSize;
      } else if (ballSize >=0 && x>=width*.75){
-       ballSize -=5;
+       ballSize -=finalSize;
      }
       //maxBallSize = height*.5;
     //}
