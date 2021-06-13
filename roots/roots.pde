@@ -13,7 +13,7 @@ void setup(){
 }
 void draw(){
    fill(closeness);
-   closeness+=time*.3;
+   closeness =map(noise(time*2), 0, 1, 0, 255);
   if (x < width-(height*.5)){
     time+=.08;
     x+=7;
